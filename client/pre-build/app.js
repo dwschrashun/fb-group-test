@@ -13,20 +13,18 @@ app.config(function ($urlRouterProvider, $locationProvider) {
 	  js = d.createElement(s); js.id = id;
 	  js.src = "//connect.facebook.net/en_US/sdk.js";
 	  fjs.parentNode.insertBefore(js, fjs);
-	  console.log("iife run");
 	}(document, 'script', 'facebook-jssdk'));
 });
 
-app.run(function ($rootScope) {
+app.run(function ($rootScope, fbConfigValues) {
 	window.fbAsyncInit = function() {
 		FB.init({
-		    appId      : '829074960536435',
+		    appId      : fbConfigValues.appId,
 		    cookie     : true,  // enable cookies to allow the server to access 
 		                        // the session
 		    xfbml      : true,  // parse social plugins on this page
 		    version    : 'v2.2' // use version 2.2
 		});
-		console.log("fbAsyncInit");
 		$rootScope.fbInit = true;
 	};
 });

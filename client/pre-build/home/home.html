@@ -1,8 +1,12 @@
 <section id="home">
-    <p>Test FB GROUP APP</p>
-	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-	</fb:login-button>
-
-	<div id="status">
-	</div>
+	<div class="row">
+		<div class="col-lg-4 col-md-4 col-xl-4">
+		    <p>Test FB GROUP APP</p>
+		    <login-button></login-button>
+			<div id="status">
+			</div>
+		</div>
+		<div class="col-lg-8 col-md-8 col-xl-8">
+			<group-feed ng-if="loggedIn"></group-feed>
+		</div>
 </section>
